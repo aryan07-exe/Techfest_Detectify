@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detectify - Advanced Object Detection</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e2e;
+      color: #fff;
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    /* Side Drawer */
+    .side-drawer {
+      background-color: #22252a;
+      width: 250px;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .side-drawer h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #62dafb;
+      margin-bottom: 20px;
+      text-align: center;
+      text-shadow: 2px 2px 4px #000;
+    }
+
+    .side-drawer a {
+      color: #bbb;
+      text-decoration: none;
+      font-size: 1rem;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .side-drawer a:hover {
+      background-color: #333;
+      color: #fff;
+    }
+
+    /* Main Content */
+    .main-content {
+      margin-left: 270px;
+      padding: 40px;
+      width: calc(100% - 270px);
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    header {
+      text-align: center;
+    }
+
+    header h1 {
+      color: #62dafb;
+      font-size: 3rem;
+    }
+
+    header p {
+      color: #ccc;
+      font-size: 1.2rem;
+    }
+
+    /* Features Section */
+    .features {
+      display: flex;
+      justify-content: space-between;
+      overflow-x: auto;
+      padding-bottom: 15px;
+    }
+
+    .feature-card {
+      background-color: #292d36;
+      border: 1px solid #333;
+      border-radius: 8px;
+      margin: 0 10px;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .feature-card h3 {
+      color: #62dafb;
+      margin-bottom: 15px;
+    }
+
+    .feature-card p {
+      color: #ddd;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    /* Use Cases Section */
+    .use-cases {
+      background-color: #292d36;
+      padding: 30px;
+      border-radius: 8px;
+      color: #ddd;
+    }
+
+    .use-cases h2 {
+      color: #62dafb;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .use-cases ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .use-cases li {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin: 10px 0;
+    }
+
+    .use-cases li::before {
+      content: "•";
+      color: #62dafb;
+      margin-right: 10px;
+    }
+
+    /* CTA Section */
+    .cta {
+      text-align: center;
+    }
+
+    .cta button {
+      background-color: #62dafb;
+      color: #fff;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta button:hover {
+      background-color: #50c1e8;
+    }
+  </style>
+</head>
+<body>
+  <!-- Side Drawer -->
+  <div class="side-drawer">
+    <h2>Detectify</h2>
+    <a href="#features">Features</a>
+    <a href="#use-cases">Use Cases</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#alerts">Custom Alerts</a>
+    <a href="#contact">Contact Us</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <header>
+      <h1>Welcome to Detectify</h1>
+      <p>Your trusted AI-powered object detection platform</p>
+    </header>
+
+    <!-- Features Section -->
+    <div id="features" class="features">
+      <div class="feature-card">
+        <h3>Photo Object Detection</h3>
+        <p>Upload images to detect objects with unparalleled accuracy.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Real-Time Video Monitoring</h3>
+        <p>Track and monitor objects in live video streams seamlessly.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Webcam Object Classification</h3>
+        <p>Use your webcam to classify objects instantly and reliably.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Alert System</h3>
+        <p>Receive alerts for detected objects or anomalies in real time.</p>
+      </div>
+    </div>
+
+    <!-- Use Cases Section -->
+    <div id="use-cases" class="use-cases">
+      <h2>Use Cases</h2>
+      <ul>
+        <li><strong>Home Security:</strong> Use webcam or external cameras to monitor your home and receive instant alerts on unusual activity.</li>
+        <li><strong>Retail Analytics:</strong> Monitor foot traffic, detect unusual behaviors, and improve store management with real-time object classification.</li>
+        <li><strong>Industrial Monitoring:</strong> Keep track of machinery, employees, and critical areas for safety compliance and efficiency.</li>
+        <li><strong>Autonomous Vehicles:</strong> Enhance object detection in self-driving cars to ensure safe navigation through various environments.</li>
+        <li><strong>Smart Cities:</strong> Utilize surveillance cameras and IoT devices to monitor public spaces and detect potential threats.</li>
+      </ul>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="cta">
+      <button>Get Started Now</button>
+    </div>
+  </div>
+</body>
+</html>

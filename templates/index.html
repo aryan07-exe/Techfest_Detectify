@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Object Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Advanced Object Detection Platform</h1>
+            <p>Leverage AI-powered computer vision for precise object recognition</p>
+        </header>
+
+        <main>
+            <section class="detection-section">
+                <h2>Webcam Detection</h2>
+                <div class="detection-container">
+                    <!-- Webcam video feed -->
+                    <img id="video-feed" src="/video_feed" alt="Webcam Feed">
+                    <div class="button-group">
+                        <button id="start-btn" onclick="startDetection()">Start Detection</button>
+                        <button id="stop-btn" onclick="stopDetection()">Stop Detection</button>
+                    </div>
+                    <p id="status">Status: Waiting to start...</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

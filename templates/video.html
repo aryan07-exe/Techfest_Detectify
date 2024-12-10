@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Video for Object Detection</title>
+    <link rel="stylesheet" href="static\new.css">
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Upload Video for Object Detection</h1>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <input type="file" name="video" id="videoFile" accept="video/*" required>
+            <button type="submit">Upload Video</button>
+        </form>
+
+        <h2>Object Detection Results</h2>
+        <table id="resultsTable">
+            <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>Count</th>
+                    <th>First Detected At (s)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Results will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
